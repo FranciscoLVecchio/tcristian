@@ -1,0 +1,175 @@
+$negro: black;
+$titulo: titulo;
+$portada: portada;
+$texto: texto;
+
+@mixin condicion($area){
+        grid-area: ($area);
+        @if $area == $titulo {
+            text-align: center;
+            font-size: 150%;
+            padding: 25px;
+        }
+        @else if $area == $portada {
+            text-align: center;
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+        @else if $area == $texto{
+            text-align: center;
+            font-size: large;
+        }
+}
+
+
+main{
+    .inicio{
+        padding-left: 70px;
+        padding-right: 70px;
+        display: grid;
+        grid-template-rows: repeat(3 1fr);
+        grid-template-columns: repeat(2 1fr);
+        grid-template-areas:
+        "titulo titulo" 
+        "texto portada"
+        "texto portada";
+        .titulo{
+            @include condicion($titulo)
+        }
+        .portada{
+            @include condicion($portada)
+        }
+        .texto{
+            @include condicion($texto)
+        }
+    }
+    .servicios{
+        color: $negro;
+        padding: 10px;
+        .serv{
+            font-size: 150%;
+            padding-left: 65px;
+        }
+        .textserv{
+            font-size: 110%;
+            padding-left: 65px;
+            list-style: none;
+        }
+    }
+    .equip{
+        text-align: center;
+        color: $negro;
+        .divequip{
+            padding-bottom: 20px;
+            .equipimg{
+                width: 144px;
+                height: 110px;
+            }
+            .caja {
+                color: $negro;
+                font-size: 150%;
+            }
+        }
+    }
+    .gal{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .img{
+            border: 2px double $negro;
+            margin: 1.5rem;
+            opacity: 0.7;
+            transition: .5s;
+            &:hover{
+                opacity: 1;
+                transform: scale(1.1,1.1);
+                transition: .5s;
+            }
+        }
+    }
+    .sobren{
+        padding-left: 70px;
+        padding-right: 70px;
+        display: grid;
+        grid-template-rows: repeat(4 1fr);
+        grid-template-columns: repeat(2 1fr);
+        grid-template-areas: 
+        "transporte transporte"
+        "subtitulo sobrenimagen"
+        "sobrentexto sobrenimagen"
+        "sobrentexto sobrenimagen";
+        .transporte{
+            text-align: center;
+            grid-area: transporte;
+            font-size: 150%;
+            padding-bottom: 30px;
+        }
+        .subtitulo{
+            grid-area: subtitulo;
+            font-size: 130%;
+        }
+        .sobrentexto{
+            grid-area: sobrentexto;
+            font-size: 110%;
+            padding: 5px;
+        }
+        .sobrenimagen{
+            grid-area: sobrenimagen;
+            padding-left: 50px;
+        }
+    }
+    fieldset{
+        color: $negro;
+        padding-left: 67px;
+        border: none;
+        .legend{
+            font-size: 200%;
+        }
+        .gridform{
+            display: grid;
+            grid-template-rows: repeat(5 2fr);
+            grid-template-columns: repeat(2 2fr);
+            grid-template-areas: 
+            "name maquina"
+            "empresa dimensiones"
+            "mail peso"
+            "tel retiro"
+            "coment destino";
+            .divcont{
+                margin-bottom: 20px;
+                .form{
+                    width: 507px;
+                    height: 40px;
+                }
+            }
+            .nameform{
+                grid-area: name;
+            }
+            .empform{
+                grid-area: empresa;
+            }
+            .mailform{
+                grid-area: mail;
+            }
+            .telform{
+                grid-area: tel;
+            }
+            .maqform{
+                grid-area: maquina;
+            }
+            .dimform{
+                grid-area: dimensiones;
+            }
+            .pesoform{
+                grid-area: peso;
+            }
+            .retform{
+                grid-area: retiro;
+            }
+            .desform{
+                grid-area: destino;
+            }
+        }
+    }
+}

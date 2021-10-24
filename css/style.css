@@ -1,0 +1,163 @@
+* {
+  padding: 0%;
+  margin: 0%; }
+
+body {
+  background-color: #d6d6d6; }
+  body h1 {
+    color: black;
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Roboto Mono', monospace; }
+    body h1 .logo {
+      width: 350px;
+      height: 150px; }
+
+header nav .lista {
+  color: lightgray;
+  background-color: #525252;
+  padding: 0%;
+  width: 90%;
+  margin: 20px auto;
+  border-style: double;
+  border-color: orange; }
+  header nav .lista .button-dropdown {
+    display: none; }
+  header nav .lista li {
+    display: inline-block;
+    text-align: center; }
+    header nav .lista li a {
+      color: darkgrey;
+      text-decoration: none;
+      display: inline-block;
+      padding: 20px;
+      transition: .2s; }
+      header nav .lista li a:hover {
+        color: orange;
+        background-color: #818181;
+        transition: .2; }
+
+main .inicio {
+  padding-left: 70px;
+  padding-right: 70px;
+  display: grid;
+  grid-template-rows: repeat(3 1fr);
+  grid-template-columns: repeat(2 1fr);
+  grid-template-areas: "titulo titulo"  "texto portada" "texto portada"; }
+  main .inicio .titulo {
+    grid-area: titulo;
+    text-align: center;
+    font-size: 150%;
+    padding: 25px; }
+  main .inicio .portada {
+    grid-area: portada;
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px; }
+  main .inicio .texto {
+    grid-area: texto;
+    text-align: center;
+    font-size: large; }
+
+main .servicios {
+  color: black;
+  padding: 10px; }
+  main .servicios .serv {
+    font-size: 150%;
+    padding-left: 65px; }
+  main .servicios .textserv {
+    font-size: 110%;
+    padding-left: 65px;
+    list-style: none; }
+
+main .equip {
+  text-align: center;
+  color: black; }
+  main .equip .divequip {
+    padding-bottom: 20px; }
+    main .equip .divequip .equipimg {
+      width: 144px;
+      height: 110px; }
+    main .equip .divequip .caja {
+      color: black;
+      font-size: 150%; }
+
+main .gal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  main .gal .img {
+    border: 2px double black;
+    margin: 1.5rem;
+    opacity: 0.7;
+    transition: .5s; }
+    main .gal .img:hover {
+      opacity: 1;
+      transform: scale(1.1, 1.1);
+      transition: .5s; }
+
+main .sobren {
+  padding-left: 70px;
+  padding-right: 70px;
+  display: grid;
+  grid-template-rows: repeat(4 1fr);
+  grid-template-columns: repeat(2 1fr);
+  grid-template-areas: "transporte transporte" "subtitulo sobrenimagen" "sobrentexto sobrenimagen" "sobrentexto sobrenimagen"; }
+  main .sobren .transporte {
+    text-align: center;
+    grid-area: transporte;
+    font-size: 150%;
+    padding-bottom: 30px; }
+  main .sobren .subtitulo {
+    grid-area: subtitulo;
+    font-size: 130%; }
+  main .sobren .sobrentexto {
+    grid-area: sobrentexto;
+    font-size: 110%;
+    padding: 5px; }
+  main .sobren .sobrenimagen {
+    grid-area: sobrenimagen;
+    padding-left: 50px; }
+
+main fieldset {
+  color: black;
+  padding-left: 67px;
+  border: none; }
+  main fieldset .legend {
+    font-size: 200%; }
+  main fieldset .gridform {
+    display: grid;
+    grid-template-rows: repeat(5 2fr);
+    grid-template-columns: repeat(2 2fr);
+    grid-template-areas: "name maquina" "empresa dimensiones" "mail peso" "tel retiro" "coment destino"; }
+    main fieldset .gridform .divcont {
+      margin-bottom: 20px; }
+      main fieldset .gridform .divcont .form {
+        width: 507px;
+        height: 40px; }
+    main fieldset .gridform .nameform {
+      grid-area: name; }
+    main fieldset .gridform .empform {
+      grid-area: empresa; }
+    main fieldset .gridform .mailform {
+      grid-area: mail; }
+    main fieldset .gridform .telform {
+      grid-area: tel; }
+    main fieldset .gridform .maqform {
+      grid-area: maquina; }
+    main fieldset .gridform .dimform {
+      grid-area: dimensiones; }
+    main fieldset .gridform .pesoform {
+      grid-area: peso; }
+    main fieldset .gridform .retform {
+      grid-area: retiro; }
+    main fieldset .gridform .desform {
+      grid-area: destino; }
+
+footer {
+  border-radius: 20px;
+  padding-right: 65px;
+  text-align: right;
+  background: #2a2b00;
+  background: linear-gradient(90deg, #d6d6d6 35%, #818181 100%); }
